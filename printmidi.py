@@ -61,7 +61,7 @@ while len(d[i]) == 1 and len(d[i - 1]) == 1 and float(d[i][0]) > float(d[i - 1][
     i -= 1
 
 # calculate bpm
-bpm = beat_count * SECSperMIN / (time_dif)
+bpm = beat_count * SECSperMIN / (2 * time_dif)
 print "bpm =", bpm
 
 # Create the MIDIFile Object
@@ -111,4 +111,4 @@ binfile.close()
 
 # send file, outfile_name, and author of file to website
 r = requests.post('http://ide50-zhao03.cs50.io/apiupload.php', data={'title': outfile_name, 'name': name},
-                    files={'fileToUpload': open(outfile, 'rb')})
+                  files={'fileToUpload': open(outfile, 'rb')})
