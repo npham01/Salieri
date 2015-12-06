@@ -110,5 +110,5 @@ MyMIDI.writeFile(binfile)
 binfile.close()
 
 # send file, outfile_name, and author of file to website
-r = requests.post('http://ide50-zhao03.cs50.io/apiupload.php', data={'title': outfile_name, 'name': name},
+r = requests.post('http://ide50-zhao03.cs50.io/upload.php', data={'title': outfile_name, 'name': name},
                   files={'fileToUpload': open(outfile, 'rb')})
